@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'e2eDemo';
+  public title: string = 'e2eDemo';
+  public points: number = 0;
+
+  public addPoints(): void {
+    this.points++;
+  }
+
+  public resetPoints(): void {
+    this.points = 0;
+  }
 }

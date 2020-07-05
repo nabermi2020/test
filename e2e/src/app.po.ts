@@ -6,6 +6,18 @@ export class AppPage {
   }
 
   getTitleText(): Promise<string> {
-    return element(by.css('app-root .content span')).getText() as Promise<string>;
+    return element(by.css('h2')).getText() as Promise<string>;
+  }
+
+  getPoints() {
+    return element(by.css('span')).getText() as Promise<string>;
+  }
+
+  getAddButton() {
+    return element(by.cssContainingText('button', 'Add'));
+  }
+
+  getResetButton() {
+    return element(by.cssContainingText('button', 'Reset'));
   }
 }

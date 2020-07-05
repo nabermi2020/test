@@ -10,7 +10,22 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('e2eDemo app is running!');
+    expect(page.getTitleText()).toEqual('e2eDemo');
+  });
+
+  it('Should click 3 times and reset', () => {
+    page.navigateTo();
+
+
+    expect(page.getPoints()).toBe('0');
+
+    page.getAddButton().click();
+    page.getAddButton().click();
+    page.getAddButton().click();
+    expect(page.getPoints()).toBe('3');
+
+    page.getResetButton().click();
+    expect(page.getPoints()).toBe('0');
   });
 
   afterEach(async () => {
